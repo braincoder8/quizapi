@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Quiz-API</title>
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Bootstrap LInk -->
     <link
@@ -11,39 +11,37 @@
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous" />
-    <link href="./js/custom-bootstrap.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/ddace8a3f2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/ddace8a3f2.js"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar -->
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark">
+    <nav class="navbar navbar-expand-lg navigation-wrap">
       <div class="container">
-        <div class="navbar-left">
-          <button
-            class="navbar-toggler"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="fa-regular fa-bars"></i></span>
-          </button>
-          <a class="navbar-brand" href="/">
-            <img
-              class="logo-light"
-              src="https://quizapi.io/storage/QuizApi_Logo_White.png"
-              alt="Quiz API White Logo" />
-          </a>
-        </div>
+        <a class="navbar-brand" href="/">
+          <img
+            class="logo-light"
+            src="https://quizapi.io/storage/QuizApi_Logo_White.png"
+            alt="Quiz API White Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="https://quizapi.io/features"
-                >Features</a
-              >
+              <a class="nav-link" href="https://quizapi.io/features">Features</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -58,17 +56,9 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownAPI">
                 <li><a class="dropdown-item" href="/docs">Get started</a></li>
                 <li><a class="dropdown-item" href="#">Demo</a></li>
-                <li>
-                  <a class="dropdown-item" href="https://quizapi.io/categories"
-                    >Categories</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="https://quizapi.io/categories">Categories</a></li>
                 <li><a class="dropdown-item" href="/docs">Documentation</a></li>
-                <li>
-                  <a class="dropdown-item" href="https://quizapi.io/api-config"
-                    >API URL Generator</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="https://quizapi.io/api-config">API URL Generator</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -82,67 +72,243 @@
                 Quiz
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuiz">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="https://quizapi.io/predefined-quizzes"
-                    >Predefined Quizzes</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="https://quizapi.io/clientarea/quiz/pick"
-                    >Random Quizzes</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="https://quizapi.io/predefined-quizzes">Predefined Quizzes</a></li>
+                <li><a class="dropdown-item" href="https://quizapi.io/clientarea/quiz/pick">Random Quizzes</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://quizapi.io/contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://quizapi.io/contribute"
-                >Contribute</a
-              >
+              <a class="nav-link" href="https://quizapi.io/contribute">Contribute</a>
             </li>
           </ul>
 
           <span class="navbar-divider d-none d-lg-block"></span>
 
-          <div class="d-flex align-items-center">
-            <a
-              class="btn btn-sm btn-round btn-success ms-lg-4 me-2"
-              href="https://quizapi.io/login"
-              >Sign in</a
-            >
-            <a
-              class="btn btn-sm btn-round btn-outline-success"
-              href="https://quizapi.io/register"
-              >Sign up</a
-            >
+          <div class="d-flex align-items-center btn-container">
+            <a href="#" class="btn main-btn">Sign in</a>
+            <a href="#" class="btn main-btn">Sign up</a>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section></section>
+    <section class="hero-section">
+      <video autoplay muted loop id="heroVideo">
+          <source src="./Assests/video/homeBg.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+      </video>
+      <div class="container  hero-content d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <div class="hero-text">
+              <h3>
+                  The QuizAPI includes a wide number of <span class="text-success" id="typed-text"></span><span class="typed-cursor">|</span> questions
+              </h3>
+              <p>Test your knowledge or easily embed a quiz on your website with the Quiz API</p>
+              <div>
+                  <a href="#" class="btn main-btn me-2">Take Quiz</a>
+                  <a href="#" class="btn main-btn">API Documentation</a>
+              </div>
+          </div>
+          <img src="https://quizapi.io/storage/pages/laptop-quizapi.png" alt="Hero-Img" class="hero-img " height="380px" />
+      </div>
+  </section>
     <!-- About us -->
-    <section></section>
-    <!-- Features -->
-    <section></section>
-    <!-- Testinomial -->
-    <section></section>
+    <section class="about-section py-5">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-6">
+                  <h2>What is it all about?</h2>
+                  <p>
+                      The <strong>QuizAPI</strong> is a SaaS which lets you test your knowledge on a wide variety of technical topics. 
+                      You can create your own Quiz or get a random set of questions for a specific topic including Linux, DevOps, BASH, PHP, 
+                      and lots more. We offer an easy-to-use API which allows you to embed the quiz on your own website.
+                  </p>
+                  <div class="features">
+                      <div class="feature">
+                          <i class="fas fa-wrench text-success"></i>
+                          <h5>Customizable</h5>
+                          <p>Create your own Quiz.</p>
+                      </div>
+                      <div class="feature">
+                          <i class="fas fa-desktop text-success"></i>
+                          <h5>Responsive</h5>
+                          <p>Create your own Quiz wrapper.</p>
+                      </div>
+                      <div class="feature">
+                          <i class="fas fa-code text-success"></i>
+                          <h5>Clean</h5>
+                          <p>Easy to use API.</p>
+                      </div>
+                      <div class="feature">
+                          <i class="fas fa-file-alt text-success"></i>
+                          <h5>Documented</h5>
+                          <p>Fully documented API.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <img src="https://quizapi.io/storage/pages/laptop-quizapi.png" alt="API" class="img-fluid reveal-from-right">
+              </div>
+          </div>
+      </div>
+  </section>
+    
+     <!-- Our Top Topics Section -->
+     <section id="topics">
+      <div class="container">
+          <h2>Our Top Topics</h2>
+          <p>Test your skills with our top topics with a variety of questions set for beginners and seniors alike!</p>
+          <div class="topic-grid">
+              <div class="topic">
+                  <img src="python.jpg" alt="Python">
+                  <h3>Python</h3>
+                  <p>0 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="wordpress.jpg" alt="WordPress">
+                  <h3>WordPress</h3>
+                  <p>66 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="linux.jpg" alt="Linux">
+                  <h3>Linux</h3>
+                  <p>99 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="docker.jpg" alt="Docker">
+                  <h3>Docker</h3>
+                  <p>125 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="mysql.jpg" alt="MySQL">
+                  <h3>MySQL</h3>
+                  <p>153 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="kubernetes.jpg" alt="Kubernetes">
+                  <h3>Kubernetes</h3>
+                  <p>136 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="php.jpg" alt="PHP">
+                  <h3>PHP</h3>
+                  <p>181 Questions</p>
+              </div>
+              <div class="topic">
+                  <img src="laravel.jpg" alt="Laravel">
+                  <h3>Laravel</h3>
+                  <p>10 Questions</p>
+              </div>
+          </div>
+      </div>
+  </section>
+    <!--  -->
+    <div class="gradient-background">
+      <div class="content-box">
+          <h6>GET A TASTE OF IT</h6>
+          <h1>Try it out Now</h1>
+          <p>If you want to use all of the available features, create an account with us or login to the one you already have</p>
+          <button class="btn-login">Login</button>
+      </div>
+  </div>
+  <!--  -->
+  <div class="container mt-5 text-center">
+    <h2 class="mb-4">Predefined Quizzes</h2>
+    <p>Get a taste of our predefined quizzes containing the most relevant questions for interviews, jobs etc.</p>
+
+    <!-- Filter Buttons -->
+    <div id="filters" class="d-flex justify-content-center">
+        <button class="btn btn-outline-secondary filter-btn" data-filter="all">All</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="HTML">HTML</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="Linux">Linux</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="JavaScript">JavaScript</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="Kubernetes">Kubernetes</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="Docker">Docker</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="Laravel">Laravel</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="BASH">BASH</button>
+        <button class="btn btn-outline-secondary filter-btn" data-filter="DevOps">DevOps</button>
+    </div>
+
+    <!-- Quiz Cards -->
+    <div class="row mt-4">
+        <div class="col-md-4 quiz-card HTML">
+            <div class="card p-3">
+                <h5>Common HTML Interview Questions</h5>
+                <p class="tags">Tags: HTML</p>
+                <p class="usage">Usage: 9969</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card Linux">
+            <div class="card p-3">
+                <h5>Top 10 Common Interview Linux Questions</h5>
+                <p class="tags">Tags: Linux</p>
+                <p class="usage">Usage: 4357</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card JavaScript">
+            <div class="card p-3">
+                <h5>JavaScript Essentials Everybody Should Know</h5>
+                <p class="tags">Tags: JavaScript</p>
+                <p class="usage">Usage: 11892</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card Kubernetes">
+            <div class="card p-3">
+                <h5>Top 10 Kubernetes Interview Questions</h5>
+                <p class="tags">Tags: Kubernetes</p>
+                <p class="usage">Usage: 6269</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card Docker">
+            <div class="card p-3">
+                <h5>Basic Dockerfile Quiz</h5>
+                <p class="tags">Tags: Docker</p>
+                <p class="usage">Usage: 5050</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card Laravel">
+            <div class="card p-3">
+                <h5>10 Simple Laravel Interview Questions</h5>
+                <p class="tags">Tags: Laravel</p>
+                <p class="usage">Usage: 5245</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card BASH">
+            <div class="card p-3">
+                <h5>Top Bash/Linux Interview Questions</h5>
+                <p class="tags">Tags: Linux, BASH</p>
+                <p class="usage">Usage: 4316</p>
+            </div>
+        </div>
+        <div class="col-md-4 quiz-card DevOps">
+            <div class="card p-3">
+                <h5>Search Results Web Results Ansible Quiz Beginner Level</h5>
+                <p class="tags">Tags: DevOps</p>
+                <p class="usage">Usage: 3977</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="mt-4">If you want to check out all of our Predefined Quizzes <a href="#">click here</a> to see them all.</p>
+</div>
     <!-- Footer -->
-    <footer></footer>
+    <footer class="footer">
+      <div class="container text-center">
+        <p>&copy; 2024 Quiz API. All rights reserved.</p>
+      </div>
+    </footer>
+    
     <script src="./js/script.js"></script>
+
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
       crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
   </body>
 </html>
